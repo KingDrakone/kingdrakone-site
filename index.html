@@ -521,22 +521,31 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <script type="text/x-dc" data-dc-script data-props="{&quot;inscritos&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:17000,&quot;min&quot;:0,&quot;step&quot;:1},&quot;target&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-11-18T11:00:00Z&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:3100}}">
 class Component extends DCLogic {
   componentDidMount() {
-    this.start = Date.now();
     this.timer = setInterval(() => this.setState({ now: Date.now() }), 100);
+    const begin = () => { if (!this.start) this.start = Date.now(); };
+    this.startTimer = setTimeout(begin, 2000);
+    try {
+      fetch('/.netlify/functions/inscritos', { cache: 'no-store' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => { if (d && Number.isFinite(d.inscritos)) this.live = d.inscritos; })
+        .catch(() => {})
+        .then(begin);
+    } catch (e) { begin(); }
   }
   componentWillUnmount() {
     clearInterval(this.timer);
+    clearTimeout(this.startTimer);
   }
   renderVals() {
     const now = (this.state && this.state.now) || Date.now();
     let t = new Date(this.props.target || '2026-11-18T11:00:00Z');
     if (isNaN(t.getTime())) t = new Date('2026-11-18T11:00:00Z');
     const diff = Math.max(0, t.getTime() - now);
-    let total = Number(this.props.inscritos);
+    let total = Number.isFinite(this.live) ? this.live : Number(this.props.inscritos);
     if (!isFinite(total) || total < 0) total = 16566;
     let still = false;
     try { still = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) {}
-    const prog = still ? 1 : Math.min(1, (now - (this.start || now)) / 2200);
+    const prog = still ? 1 : (this.start ? Math.min(1, (now - this.start) / 2200) : 0);
     const eased = 1 - Math.pow(1 - prog, 3);
     const shown = Math.round(total * eased);
     const subs = String(shown).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
