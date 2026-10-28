@@ -48,6 +48,7 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <a href="#gta6" style="color:#F6EBFF;text-decoration:none;padding:10px 0">GTA 6</a>
 <a href="#lives" style="color:#F6EBFF;text-decoration:none;padding:10px 0">Lives</a>
 <a href="#shorts" style="color:#F6EBFF;text-decoration:none;padding:10px 0">Shorts</a>
+<a href="playlists.html" style="color:#F6EBFF;text-decoration:none;padding:10px 0">Playlists</a>
 <a href="#ficheiro" style="color:#F6EBFF;text-decoration:none;padding:10px 0">Ficheiro GTA 6</a>
 <a href="#setup" style="color:#F6EBFF;text-decoration:none;padding:10px 0">Setup</a>
 <a href="#sobre" style="color:#F6EBFF;text-decoration:none;padding:10px 0">Sobre</a>
@@ -178,66 +179,19 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px"><button type="button" aria-label="Vídeos anteriores" onClick="{{gtaPrev}}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0A0710;color:#F6EBFF;border:2px solid #000;box-shadow:3px 3px 0 #9B4DFF;cursor:pointer;padding:0"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" aria-label="Próximos vídeos" onClick="{{gtaNext}}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0A0710;color:#F6EBFF;border:2px solid #000;box-shadow:3px 3px 0 #9B4DFF;cursor:pointer;padding:0"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button><a href="https://www.youtube.com/@KingDrakone/videos" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;background:#FF37AF;color:#0A0710;text-decoration:none;padding:16px 26px">Ver todos os vídeos</a></div>
 </div>
 <div id="gtaSlider" style="display: flex; flex-wrap: nowrap; gap: 24px; margin-top: 48px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 0 8px 16px 0; -webkit-overflow-scrolling: touch">
-<a href="https://www.youtube.com/@KingDrakone/videos" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
-<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#2E1458 0%,#A2269F 60%,#FF6F7D 100%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box">
-<span style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
-<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
+<sc-for list="{{gta}}" as="g" hint-placeholder-count="6">
+<a href="{{g.url}}" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
+<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#2E1458 0%,#A2269F 60%,#FF6F7D 100%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box;overflow:hidden">
+<sc-if value="{{g.thumb}}" hint-placeholder-val="{{ false }}"><img src="{{g.thumb}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></sc-if>
+<span style="position:relative;font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
+<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48" style="position:relative"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
 </div>
 <div style="padding:18px 18px 22px">
-<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">[título do vídeo 1]</h3>
-<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no canal →</p>
+<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">{{g.title}}</h3>
+<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no YouTube →</p>
 </div>
 </a>
-<a href="https://www.youtube.com/@KingDrakone/videos" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
-<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#0A0710 0%,#2E1458 50%,#FF37AF 130%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box">
-<span style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
-<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
-</div>
-<div style="padding:18px 18px 22px">
-<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">[título do vídeo 2]</h3>
-<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no canal →</p>
-</div>
-</a>
-<a href="https://www.youtube.com/@KingDrakone/videos" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
-<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#FF6F7D 0%,#FF37AF 55%,#2E1458 100%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box">
-<span style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
-<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
-</div>
-<div style="padding:18px 18px 22px">
-<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">[título do vídeo 3]</h3>
-<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no canal →</p>
-</div>
-</a>
-<a href="https://www.youtube.com/@KingDrakone/videos" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
-<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#2E1458 0%,#A2269F 60%,#FF6F7D 100%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box">
-<span style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
-<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
-</div>
-<div style="padding:18px 18px 22px">
-<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">[título do vídeo 4]</h3>
-<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no canal →</p>
-</div>
-</a>
-<a href="https://www.youtube.com/@KingDrakone/videos" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
-<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#0A0710 0%,#2E1458 50%,#FF37AF 130%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box">
-<span style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
-<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
-</div>
-<div style="padding:18px 18px 22px">
-<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">[título do vídeo 5]</h3>
-<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no canal →</p>
-</div>
-</a>
-<a href="https://www.youtube.com/@KingDrakone/videos" style="flex:0 0 min(340px,82%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
-<div style="position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,#FF6F7D 0%,#FF37AF 55%,#2E1458 100%);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px;box-sizing:border-box">
-<span style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#0A0710;color:#FF8FA0;padding:6px 10px">GTA 6</span>
-<svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
-</div>
-<div style="padding:18px 18px 22px">
-<h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:800;font-size:19px;line-height:1.25;text-transform:uppercase">[título do vídeo 6]</h3>
-<p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF">Ver no canal →</p>
-</div>
-</a>
+</sc-for>
 </div>
 </div>
 </section><section id="lives" style="background: linear-gradient(180deg,rgba(10,7,16,.62) 0%,rgba(27,15,46,.78) 100%); border-top: 1px solid rgba(255,255,255,.12)">
@@ -247,19 +201,19 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <h2 style="margin:0;font-family:'Roboto Slab',serif;font-weight:900;font-size:clamp(30px,5vw,58px);line-height:1.1;text-transform:uppercase;text-wrap:balance">Lives do King Drakone</h2>
 <p style="margin:20px 0 0;max-width:520px;font-size:18px">Transmissões ao vivo com jogos, reações e conversa com o chat.</p>
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase">
-<a href="https://www.youtube.com/live/_2YZbJEHb60" style="background:#FF37AF;color:#0A0710;text-decoration:none;padding:16px 26px">Ver a live no YouTube</a>
+<a href="{{liveUrl}}" style="background:#FF37AF;color:#0A0710;text-decoration:none;padding:16px 26px">Ver a live no YouTube</a>
 <a href="https://discord.gg/5TCBxGkkM7" style="border:2px solid #F6EBFF;color:#F6EBFF;text-decoration:none;padding:14px 24px;background:rgba(18,5,28,.45)">Avisos no Discord</a>
 </div>
 </div>
 <div style="flex: 1 1 360px; min-width: 0; background: #0A0710; border: 2px solid #000; box-shadow: 5px 5px 0 #9B4DFF; position: relative">
-<a href="https://www.youtube.com/live/_2YZbJEHb60" aria-label="Abrir a live no YouTube" style="text-decoration: none; color: #F6EBFF; position: relative; aspect-ratio: 16/9; max-width: 100%; background: linear-gradient(135deg,#2E1458 0%,#A2269F 55%,#FF6F7D 100%); display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: 16px; box-sizing: border-box; overflow: hidden">
+<a href="{{liveUrl}}" aria-label="Abrir a live no YouTube" style="text-decoration: none; color: #F6EBFF; position: relative; aspect-ratio: 16/9; max-width: 100%; background: linear-gradient(135deg,#2E1458 0%,#A2269F 55%,#FF6F7D 100%); display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: 16px; box-sizing: border-box; overflow: hidden">
 <img src="assets/ff9b6e526b9fb1c588cdb39cc60acf93.webp" alt="Capa da live do King Drakone" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center">
 <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,0) 55%,rgba(10,7,16,.7) 100%)"></div>
 <span style="position:relative;font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:#FF37AF;color:#0A0710;padding:6px 10px">Ao vivo</span>
 <svg style="position:relative" aria-hidden="true" viewBox="0 0 48 48" width="56" height="56"><circle cx="24" cy="24" r="23" fill="#0A0710" fill-opacity=".6" stroke="#F6EBFF" stroke-width="2"></circle><path d="M19 15l16 9-16 9z" fill="#F6EBFF"></path></svg>
 </a>
 <div style="padding: 20px 20px 24px">
-<p style="margin:0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#FF8FA0">Próxima live</p>
+<p style="margin:0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#FF8FA0">{{liveKicker}}</p>
 <p style="margin:8px 0 0;font-family:'Roboto Slab',serif;font-weight:800;font-size:21px;line-height:1.2;text-transform:uppercase">18 de novembro de 2026</p>
 <p style="margin:8px 0 0;font-family:'Chivo Mono',monospace;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#FF8FA0">8h do Brasil · 11h de Portugal</p>
 <p style="margin:8px 0 0;color:#B9A3CC">Segue o canal e entra no Discord para saberes quando começa.</p>
@@ -280,75 +234,19 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <h2 style="margin:0;font-family:'Roboto Slab',serif;font-weight:900;font-size:clamp(30px,5vw,58px);line-height:1.1;text-transform:uppercase;text-wrap:balance">Shorts</h2>
 <p style="margin:16px 0 0;max-width:520px;font-size:18px;color:#B9A3CC">Clipes rápidos, memes e momentos virais em menos de um minuto.</p>
 </div>
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px"><button type="button" aria-label="Shorts anteriores" onClick="{{shortsPrev}}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0A0710;color:#F6EBFF;border:2px solid #000;box-shadow:3px 3px 0 #9B4DFF;cursor:pointer;padding:0"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" aria-label="Próximos Shorts" onClick="{{shortsNext}}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0A0710;color:#F6EBFF;border:2px solid #000;box-shadow:3px 3px 0 #9B4DFF;cursor:pointer;padding:0"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button><a href="https://www.youtube.com/@KingDrakone/shorts" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;background:#FF37AF;color:#0A0710;text-decoration:none;padding:16px 26px">Ver todos os Shorts</a></div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px"><button type="button" aria-label="Shorts anteriores" onClick="{{shortsPrev}}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0A0710;color:#F6EBFF;border:2px solid #000;box-shadow:3px 3px 0 #9B4DFF;cursor:pointer;padding:0"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" aria-label="Próximos Shorts" onClick="{{shortsNext}}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0A0710;color:#F6EBFF;border:2px solid #000;box-shadow:3px 3px 0 #9B4DFF;cursor:pointer;padding:0"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button><a href="shorts.html" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;background:#FF37AF;color:#0A0710;text-decoration:none;padding:16px 26px">Ver todos os Shorts</a></div>
 </div>
 
 <div id="shortsSlider" style="display:flex;flex-wrap:nowrap;gap:20px;margin-top:48px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 8px 16px 0;-webkit-overflow-scrolling:touch">
-
-<a href="https://youtube.com/shorts/dCkOHx1FW00" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#2E1458 0%,#A2269F 60%,#FF6F7D 100%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/a5d01fff13e2e96a53c285f20e35ed8d.png" alt="Miniatura do Short Só sabe arrumar problema" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+<sc-for list="{{shorts}}" as="s" hint-placeholder-count="4">
+<a href="{{s.url}}" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
+<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#2E1458 0%,#A2269F 60%,#FF6F7D 100%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box;overflow:hidden">
+<img src="{{s.thumb}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
 <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Só sabe arrumar problema</span>
+<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">{{s.title}}</span>
 </div>
 </a>
-
-<a href="https://youtube.com/shorts/kaPjAgNnaOo" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#0A0710 0%,#2E1458 50%,#CDA8FF 150%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/677a3dda343ac325ae14d578bad34200.png" alt="Miniatura do Short 2" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">como os personagens de outro jogos estão enxergando o steve do minecraft<span style="color: rgb(241, 241, 241); font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; text-transform: none; white-space: pre-wrap; background-color: rgb(15, 15, 15)">💀</span></span>
-</div>
-</a>
-
-<a href="https://youtube.com/shorts/sNHgyFFMUWk" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#FF6F7D 0%,#FF37AF 55%,#2E1458 100%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/b5faa628a44a5997b5eec76b1a42b413.png" alt="Miniatura do Short Agora sabemos o porquê dos vazamentos do GTA VI" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Agora sabemos o porquê dos vazamentos do GTA VI</span>
-</div>
-</a>
-
-<a href="https://youtube.com/shorts/R1f3MmxOyYA" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#1B0F2E 0%,#A2269F 70%,#FF8FA0 150%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/aa511c5e122423852bd0f83aed98f877.png" alt="Miniatura do Short" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Ver este Short no YouTube</span>
-</div>
-</a><a href="https://youtube.com/shorts/R1f3MmxOyYA" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#1B0F2E 0%,#A2269F 70%,#FF8FA0 150%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/aa511c5e122423852bd0f83aed98f877.png" alt="Miniatura do Short" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Ver este Short no YouTube</span>
-</div>
-</a><a href="https://youtube.com/shorts/R1f3MmxOyYA" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#1B0F2E 0%,#A2269F 70%,#FF8FA0 150%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/aa511c5e122423852bd0f83aed98f877.png" alt="Miniatura do Short" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Ver este Short no YouTube</span>
-</div>
-</a><a href="https://youtube.com/shorts/R1f3MmxOyYA" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#1B0F2E 0%,#A2269F 70%,#FF8FA0 150%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/aa511c5e122423852bd0f83aed98f877.png" alt="Miniatura do Short" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Ver este Short no YouTube</span>
-</div>
-</a><a href="https://youtube.com/shorts/R1f3MmxOyYA" style="flex:0 0 min(240px,62%);scroll-snap-align:start;text-decoration:none;color:#F6EBFF">
-<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#1B0F2E 0%,#A2269F 70%,#FF8FA0 150%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box">
-<img src="assets/aa511c5e122423852bd0f83aed98f877.png" alt="Miniatura do Short" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center">
-<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
-
-<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">Ver este Short no YouTube</span>
-</div>
-</a>
-
+</sc-for>
 </div>
 </div>
 </section><section id="ficheiro" style="background:rgba(21,12,31,.78);border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)">
@@ -560,6 +458,12 @@ class Component extends DCLogic {
         .catch(() => {})
         .then(begin);
     } catch (e) { begin(); }
+    try {
+      fetch('/.netlify/functions/ultimos', { cache: 'no-store' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => { if (d && (Array.isArray(d.videos) || Array.isArray(d.shorts))) this.setState({ ultimos: d }); })
+        .catch(() => {});
+    } catch (e) {}
   }
   componentWillUnmount() {
     clearInterval(this.timer);
@@ -583,6 +487,17 @@ class Component extends DCLogic {
     const hours = Math.floor((diff % 86400000) / 3600000);
     const mins = Math.floor((diff % 3600000) / 60000);
     const secs = Math.floor((diff % 60000) / 1000);
+    const U = (this.state && this.state.ultimos) || null;
+    const fbShorts = [{"url": "https://youtube.com/shorts/dCkOHx1FW00", "title": "Só sabe arrumar problema", "thumb": "assets/a5d01fff13e2e96a53c285f20e35ed8d.png"}, {"url": "https://youtube.com/shorts/kaPjAgNnaOo", "title": "Como os personagens de outros jogos estão enxergando o Steve do Minecraft", "thumb": "assets/677a3dda343ac325ae14d578bad34200.png"}, {"url": "https://youtube.com/shorts/sNHgyFFMUWk", "title": "Agora sabemos o porquê dos vazamentos do GTA VI", "thumb": "assets/b5faa628a44a5997b5eec76b1a42b413.png"}, {"url": "https://youtube.com/shorts/R1f3MmxOyYA", "title": "Ver este Short no YouTube", "thumb": "assets/aa511c5e122423852bd0f83aed98f877.png"}];
+    const shorts = (U && U.shorts && U.shorts.length) ? U.shorts.slice(0, 10).map((x) => ({ url: x.url, title: x.titulo, thumb: x.miniatura })) : fbShorts;
+    const gtaRaw = (U && U.videos) ? U.videos.filter((v) => /gta/i.test(v.titulo)).slice(0, 6) : [];
+    const gta = [];
+    for (let q = 0; q < 6; q++) {
+      const r = gtaRaw[q];
+      gta.push({ title: r ? r.titulo : '[título do vídeo ' + (q + 1) + ']', thumb: r ? r.miniatura : '', url: r ? r.url : 'https://www.youtube.com/@KingDrakone/videos' });
+    }
+    const liveUrl = (U && U.live && U.live.url) ? U.live.url : 'https://www.youtube.com/live/_2YZbJEHb60';
+    const liveKicker = (U && U.live && U.live.estado === 'live') ? 'Ao vivo agora' : 'Próxima live';
     const slide = (dir) => () => {
       const el = document.getElementById('gtaSlider');
       if (el) el.scrollBy({ left: dir * Math.max(280, el.clientWidth * 0.8), behavior: 'smooth' });
@@ -601,6 +516,10 @@ class Component extends DCLogic {
     return {
       copyEmail: copyEmail,
       copyLabel: (this.state && this.state.copied) ? 'Copiado' : 'Copiar e-mail',
+      shorts: shorts,
+      gta: gta,
+      liveUrl: liveUrl,
+      liveKicker: liveKicker,
       gtaPrev: slide(-1),
       gtaNext: slide(1),
       shortsPrev: slideShorts(-1),

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>Shorts · King Drakone</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800;900&amp;family=Chivo:wght@400;500;700&amp;family=Chivo+Mono:wght@500;700&amp;display=swap">
+<style>
+html,body{margin:0;background:#0A0710}
+a{color:#CDA8FF}a:hover{color:#FF8FA0}
+a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){.bgvideo{display:none}}
+</style>
+</helmet>
+<div style="font-family:'Chivo',system-ui,sans-serif;color:#F6EBFF;line-height:1.55;position:relative;isolation:isolate;min-height:100vh">
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#0A0710 url(assets/5979588dc1e4c2d7db8f0676cde04d6b.jpg) center/cover no-repeat">
+<video class="bgvideo" src="assets/89ff14c1087e159481e66ef9984ca3a4.mp4" poster="assets/5979588dc1e4c2d7db8f0676cde04d6b.jpg" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="auto" tabindex="-1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.35),rgba(10,7,16,.55))"></div>
+</div>
+<header style="background:rgba(10,7,16,.85);border-bottom:4px solid #FF37AF">
+<nav aria-label="Principal" style="max-width:1200px;margin:0 auto;padding:16px 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px">
+<a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#F6EBFF">
+<img src="assets/21c4ff5a6e20594f5d1e8db4248513aa.webp" alt="Logótipo King Drakone" style="height:56px;width:auto;display:block">
+<span style="font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;letter-spacing:.04em;text-transform:uppercase">King Drakone</span>
+</a>
+<a href="index.html" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#F6EBFF;text-decoration:none;padding:12px 0">← Voltar ao site</a>
+</nav>
+</header>
+<section style="background:rgba(10,7,16,.72)">
+<div style="max-width:1200px;margin:0 auto;padding:72px 24px 88px;box-sizing:border-box">
+<a href="index.html" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#CDA8FF;text-decoration:none;display:inline-block;padding:10px 0">← Voltar ao site</a>
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-top:12px">
+<div style="flex:1 1 380px;min-width:0">
+<p style="margin:0 0 10px;font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#CDA8FF">// Shorts</p>
+<h1 style="margin:0;font-family:'Roboto Slab',serif;font-weight:900;font-size:clamp(30px,5vw,58px);line-height:1.1;text-transform:uppercase;text-wrap:balance">Shorts</h1>
+<p style="margin:16px 0 0;max-width:520px;font-size:18px;color:#B9A3CC">Clipes rápidos, memes e momentos virais em menos de um minuto.</p>
+</div>
+<a href="https://www.youtube.com/@KingDrakone/shorts" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 26px;background:#FF37AF;color:#0A0710">Ver todos no YouTube</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
+<sc-for list="{{shorts}}" as="s" hint-placeholder-count="4">
+<a href="{{s.url}}" style="flex:1 1 220px;min-width:0;max-width:260px;text-decoration:none;color:#F6EBFF">
+<div style="position:relative;aspect-ratio:9/16;max-width:100%;background:linear-gradient(160deg,#2E1458 0%,#A2269F 60%,#FF6F7D 100%);border:2px solid #000;box-shadow:5px 5px 0 #9B4DFF;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-sizing:border-box;overflow:hidden">
+<img src="{{s.thumb}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,0) 32%,rgba(10,7,16,.8) 100%)"></div>
+<span style="position:relative;margin-top:auto;font-family:'Roboto Slab',serif;font-weight:900;font-size:21px;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 12px #0A0710">{{s.title}}</span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+<footer style="background:rgba(5,3,10,.88);border-top:2px solid #FF37AF">
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px;box-sizing:border-box;font-size:14px;color:#B9A3CC">© King Drakone · <a href="https://www.youtube.com/@KingDrakone" style="color:#CDA8FF">YouTube</a></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+componentDidMount() {
+try {
+fetch('/.netlify/functions/ultimos', { cache: 'no-store' })
+.then((r) => (r.ok ? r.json() : null))
+.then((d) => { if (d && Array.isArray(d.shorts) && d.shorts.length) this.setState({ shorts: d.shorts }); })
+.catch(() => {});
+} catch (e) {}
+}
+renderVals() {
+const real = (this.state && this.state.shorts) || [];
+const fb = [{"url": "https://youtube.com/shorts/dCkOHx1FW00", "title": "Só sabe arrumar problema", "thumb": "assets/a5d01fff13e2e96a53c285f20e35ed8d.png"}, {"url": "https://youtube.com/shorts/kaPjAgNnaOo", "title": "Como os personagens de outros jogos estão enxergando o Steve do Minecraft", "thumb": "assets/677a3dda343ac325ae14d578bad34200.png"}, {"url": "https://youtube.com/shorts/sNHgyFFMUWk", "title": "Agora sabemos o porquê dos vazamentos do GTA VI", "thumb": "assets/b5faa628a44a5997b5eec76b1a42b413.png"}, {"url": "https://youtube.com/shorts/R1f3MmxOyYA", "title": "Ver este Short no YouTube", "thumb": "assets/aa511c5e122423852bd0f83aed98f877.png"}];
+const shorts = real.length ? real.slice(0, 24).map((x) => ({ url: x.url, title: x.titulo, thumb: x.miniatura })) : fb;
+return { shorts: shorts };
+}
+}
+</script>
+</body>
+</html>
