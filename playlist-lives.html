@@ -41,7 +41,7 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <h1 style="margin:0;font-family:'Roboto Slab',serif;font-weight:900;font-size:clamp(30px,5vw,58px);line-height:1.1;text-transform:uppercase;text-wrap:balance">Lives</h1>
 <p style="margin:16px 0 0;max-width:520px;font-size:18px;color:#B9A3CC">Todas as lives do canal, para ver ou rever.</p>
 </div>
-<a href="https://www.youtube.com/@KingDrakone/streams" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 26px;background:#FF37AF;color:#0A0710">Ver playlist completa</a>
+<a href="https://www.youtube.com/playlist?list=PLrHn02A3yZdIJS21IsDVAZ2_amw3UnicN" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 26px;background:#FF37AF;color:#0A0710">Ver playlist completa</a>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
 <sc-for list="{{videos}}" as="v" hint-placeholder-count="5">
@@ -65,7 +65,7 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
 class Component extends DCLogic {
 componentDidMount() {
-const id = null;
+const id = "PLrHn02A3yZdIJS21IsDVAZ2_amw3UnicN";
 if (!id) return;
 try {
 fetch('/.netlify/functions/playlist?id=' + encodeURIComponent(id), { cache: 'no-store' })
@@ -76,7 +76,7 @@ fetch('/.netlify/functions/playlist?id=' + encodeURIComponent(id), { cache: 'no-
 }
 renderVals() {
 const real = (this.state && this.state.vids) || [];
-const full = "https://www.youtube.com/@KingDrakone/streams";
+const full = "https://www.youtube.com/playlist?list=PLrHn02A3yZdIJS21IsDVAZ2_amw3UnicN";
 const videos = [];
 for (let i = 0; i < 5; i++) {
 const r = real[i];
