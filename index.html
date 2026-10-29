@@ -225,9 +225,9 @@ a:focus-visible{outline:3px solid #CDA8FF;outline-offset:3px}
 <h3 style="margin:0;font-family:'Roboto Slab',serif;font-weight:900;font-size:clamp(22px,3vw,34px);line-height:1.1;text-transform:uppercase">Lives anteriores</h3>
 <a href="https://www.youtube.com/playlist?list=PLrHn02A3yZdIJS21IsDVAZ2_amw3UnicN" style="font-family:'Chivo Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#CDA8FF;text-decoration:none;padding:10px 0">Ver playlist completa →</a>
 </div>
-<div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:24px">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:24px;margin-top:24px">
 <sc-for list="{{liveVideos}}" as="lv" hint-placeholder-count="5">
-<a href="{{lv.url}}" style="flex:1 1 220px;min-width:0;max-width:100%;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
+<a href="{{lv.url}}" style="min-width:0;max-width:100%;text-decoration:none;color:#F6EBFF;background:#0A0710;border:2px solid #000;box-shadow:5px 5px 0 #FF37AF">
 <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#0A0710 0%,#A2269F 60%,#FF37AF 100%);overflow:hidden">
 <sc-if value="{{lv.thumb}}" hint-placeholder-val="{{ false }}"><img src="{{lv.thumb}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></sc-if>
 </div>
