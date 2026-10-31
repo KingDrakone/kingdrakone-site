@@ -52,7 +52,7 @@ export default async () => {
       : null;
     return Response.json(
       { videos, shorts, live },
-      { headers: { "Cache-Control": "public, max-age=120, s-maxage=300" } }
+      { headers: { "Cache-Control": "public, max-age=60, s-maxage=120" } }
     );
   } catch (e) {
     return Response.json({ erro: "Falha ao contactar o YouTube" }, { status: 502 });
